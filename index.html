@@ -112,7 +112,7 @@
             const sessionId = "defaultSession"; // Puedes cambiar esto a un valor dinámico si lo necesitas
     
             try {
-                const response = await fetch("https://eabril.app.n8n.cloud/webhook-test/agente", {
+                const response = await fetch("https://eabril.app.n8n.cloud/webhook/agente", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ message, sessionId }) // Incluir sessionId en el cuerpo
