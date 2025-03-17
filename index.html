@@ -108,30 +108,33 @@
             chatBody.innerHTML += `<div><strong>Tú:</strong> ${message}</div>`;
             input.value = "";
     
+            // Generar un sessionId único o usar uno fijo
+            const sessionId = "defaultSession"; // Puedes cambiar esto a un valor dinámico si lo necesitas
+    
             try {
                 const response = await fetch("https://eabril.app.n8n.cloud/webhook-test/agente", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ message })
+                    body: JSON.stringify({ message, sessionId }) // Incluir sessionId en el cuerpo
                 });
-
+    
                 console.log("Estado de la respuesta:", response.status);
-
+    
                 if (!response.ok) {
                     throw new Error(`Error en la petición: ${response.status} ${response.statusText}`);
                 }
-
+    
                 const text = await response.text(); // Leer como texto primero
                 console.log("Respuesta cruda:", text);
-
+    
                 if (!text) {
                     throw new Error("Respuesta vacía del servidor");
                 }
-
+    
                 const data = JSON.parse(text); // Convertir a JSON
-
+    
                 console.log("Respuesta del agente:", data);
-
+    
                 if (Array.isArray(data) && data.length > 0 && data[0].output) {
                     chatBody.innerHTML += `<div><strong>Agente:</strong> ${data[0].output}</div>`;
                 } else {
@@ -141,7 +144,7 @@
                 console.error("Error al conectar con el agente:", error);
                 chatBody.innerHTML += `<div><strong>Agente:</strong> No se pudo conectar</div>`;
             }
-
+    
             chatBody.scrollTop = chatBody.scrollHeight;
         }
     </script>
