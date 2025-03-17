@@ -1,3 +1,4 @@
+/* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
 function toggleChat() {
     document.getElementById("chatContainer").classList.toggle("open");
 }
@@ -53,3 +54,15 @@ async function sendMessage() {
 
     chatBody.scrollTop = chatBody.scrollHeight;
 }
+
+// Basic Cart Functionality (new - ADDED TO EXISTING SCRIPT)
+function addToCart(productName, price) {
+    // This is a VERY basic example.  A real cart would need to:
+    // 1. Store cart data in local storage or a cookie.
+    // 2. Display the cart contents to the user.
+    // 3. Handle quantities.
+    alert('Added ' + productName + ' to cart for $' + price);  // Replace with actual cart logic
+}
+
+// Example of how to call addToCart from your HTML:
+// In your product item:  <a href="#" class="add-to-cart" onclick="addToCart('Nombre Zapatilla 1', 99.99)">Añadir al carrito</a>

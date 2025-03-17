@@ -4,16 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Agente Virtual - Zapatillas Hat Trick</title>
+    <title>Zapatillas Hat Trick</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Agente Virtual - Zapatillas Hat Trick</h1>
-        <p>Agenda reuniones y obtén asistencia en tiempo real.</p>
-    </div>
-    
+    <header>
+        <div class="logo">
+            <a href="#">Hat Trick</a>
+        </div>
+        <nav>
+            <a href="#">Productos</a>
+            <a href="#">Acerca de Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Encuentra las zapatillas perfectas</h1>
+            <p>Descubre nuestra colección de zapatillas de alta calidad.</p>
+            <img src="./assets/Banner.png" alt="Banner de Zapatillas Hat Trick">
+            <a href="#" class="cta-button">Comprar Ahora</a>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>Nuestros Productos</h2>
+        <div class="product-grid">
+            <!-- Product items will go here -->
+            <div class="product-item">
+                <img src="./assets/Zamba1.png" alt="Zapatilla 1">
+                <h3>ZAMBA</h3>
+                <p>Descripción breve.</p>
+                <span>$99.99</span>
+                <a href="#" class="add-to-cart">Añadir al carrito</a>
+            </div>
+             <div class="product-item">
+                <img src="./assets/Master2.png" alt="Zapatilla 2">
+                <h3>MASTER</h3>
+                <p>Descripción breve.</p>
+                <span>$129.99</span>
+                <a href="#" class="add-to-cart">Añadir al carrito</a>
+            </div>
+        </div>
+    </section>
+
     <button class="chat-button" onclick="toggleChat()">💬</button>
-    
+
     <div class="chat-container" id="chatContainer">
         <div class="chat-header">
             <span>Hat Trick (Agendamiento)</span>
@@ -25,7 +61,12 @@
             <input type="text" id="chatMessage" placeholder="Escribe un mensaje..." onkeypress="handleKeyPress(event)">
             <button onclick="sendMessage()">Enviar</button>
         </div>
-    </div>    
-<script src="./assets/script.js"></script>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Zapatillas Hat Trick. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./assets/script.js"></script>
 </body>
 </html>
