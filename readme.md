@@ -11,7 +11,7 @@ Bienvenido al **Agente Virtual de Zapatillas Hat Trick**, un chatbot diseñado p
 ✅ **Interfaz moderna y responsiva**.  
 
 ## 📸 Capturas de pantalla
-![Interfaz del chatbot](/agente.png)
+![Interfaz del chatbot](./assets/agente.png)
 
 ## 📦 Instalación
 
