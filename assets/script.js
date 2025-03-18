@@ -114,15 +114,30 @@ function toggleChat() {
     document.getElementById("chatContainer").classList.toggle("open");
 }
 
-/* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
-/* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
-function clearChat() {
+async function clearChat() {
     const chatBody = document.getElementById("chatBody");
     // Get all messages except the first one (greeting)
     const messagesToClear = Array.from(chatBody.children).slice(1);
 
     // Remove the messages
     messagesToClear.forEach(message => message.remove());
+
+    // Clear n8n memory
+    try {
+        const response = await fetch("https://eabril.app.n8n.cloud/webhook/clearMemory", { // Replace with your actual webhook URL
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ sessionId: "defaultSession" }) // Replace with your session ID if needed
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error clearing memory: ${response.status} ${response.statusText}`);
+        }
+
+        console.log("Memory cleared successfully");
+    } catch (error) {
+        console.error("Error clearing memory:", error);
+    }
 }
 
 function handleKeyPress(event) {
@@ -159,7 +174,6 @@ async function sendMessage() {
 
         const data = JSON.parse(text);
 
-                /* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
         if (Array.isArray(data) && data.length > 0 && data[0].output) {
             // Format the agent's response
             const agentResponse = `
@@ -169,9 +183,6 @@ async function sendMessage() {
                 </div>
             `;
             chatBody.innerHTML += agentResponse;
-            setTimeout(() => {
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }, 100);
         } else {
             chatBody.innerHTML += `<div class="message bot"><strong>Hat Trick:</strong> Respuesta inválida</div>`;
         }
@@ -179,6 +190,5 @@ async function sendMessage() {
         console.error("Error al conectar con el agente:", error);
         chatBody.innerHTML += `<div class="message bot"><strong>Hat Trick:</strong> No se pudo conectar</div>`;
     }
-
     chatBody.scrollTop = chatBody.scrollHeight;
 }

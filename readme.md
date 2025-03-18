@@ -16,9 +16,10 @@ Esta landing page combina un diseño atractivo y responsivo con un agente virtua
 *   **Personalizable:** Permite modificar la apariencia y el comportamiento del agente virtual para adaptarlo a las necesidades de la marca.
 
 ## 📸 Capturas de Pantalla
-
 ![Interfaz de la Landing Page](./assets/page.png)
-![Interfaz del Chatbot](./assets/bot.png)
+**Interfaz de la Landing**
+![Interfaz del Agente](./assets/bot.png)
+**Interfaz del agente**
 
 ## 🛠 Tecnologías Utilizadas
 
