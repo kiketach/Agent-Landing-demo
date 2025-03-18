@@ -17,9 +17,10 @@ Esta landing page combina un diseño atractivo y responsivo con un agente virtua
 
 ## 📸 Capturas de Pantalla
 ![Interfaz de la Landing Page](./assets/page.png)
-**Interfaz de la Landing**
+### Interfaz de la Landing
+
 ![Interfaz del Agente](./assets/bot.png)
-**Interfaz del agente**
+### Interfaz del agente**
 
 ## 🛠 Tecnologías Utilizadas
 

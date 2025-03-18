@@ -127,7 +127,7 @@ async function clearChat() {
         const response = await fetch("https://eabril.app.n8n.cloud/webhook/clearMemory", { // Replace with your actual webhook URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ sessionId: "defaultSession" }) // Replace with your session ID if needed
+            body: JSON.stringify({ sessionId: "defaultSession" })
         });
 
         if (!response.ok) {
