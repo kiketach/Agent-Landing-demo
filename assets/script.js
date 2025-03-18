@@ -128,6 +128,7 @@ function handleKeyPress(event) {
         sendMessage();
     }
 }
+
 async function sendMessage() {
     const input = document.getElementById("chatMessage");
     const message = input.value.trim();
@@ -136,6 +137,8 @@ async function sendMessage() {
     const chatBody = document.getElementById("chatBody");
     chatBody.innerHTML += `<div class="message user"><strong>Tú:</strong> ${message}</div>`;
     input.value = "";
+
+    chatBody.scrollTop = chatBody.scrollHeight; // Add this line
 
     const sessionId = "defaultSession";
 

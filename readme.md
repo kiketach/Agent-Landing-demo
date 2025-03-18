@@ -16,11 +16,12 @@ Esta landing page combina un diseño atractivo y responsivo con un agente virtua
 *   **Personalizable:** Permite modificar la apariencia y el comportamiento del agente virtual para adaptarlo a las necesidades de la marca.
 
 ## 📸 Capturas de Pantalla
-![Interfaz de la Landing Page](./assets/page.png)
-### Interfaz de la Landing
 
+### Interfaz de la Landing
+![Interfaz de la Landing Page](./assets/page.png)
+
+### Interfaz del agente
 ![Interfaz del Agente](./assets/bot.png)
-### Interfaz del agente**
 
 ## 🛠 Tecnologías Utilizadas
 
@@ -39,11 +40,10 @@ git clone [https://github.com/kiketach/Agent-Landing-demo.git]
 
 1.  **Configura la API del Agente Virtual:** Modifica la URL del webhook en `script.js` para conectar la landing page con tu agente virtual:
 
-    ```javascript
-    const response = await fetch("[URL del webhook]", {
-    ```
+    const response = await fetch"[URL del webhook]"
+   
 
-2.  **Personaliza el Agente Virtual:** Configura el comportamiento y las respuestas del agente virtual en la plataforma que estés utilizando (ej: n8n).
+2.  **Personaliza el Agente Virtual:** Configura el comportamiento y las respuestas del agente virtual en la plataforma n8n.
 
 ## 💡 Uso
 
