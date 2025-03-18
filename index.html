@@ -6,33 +6,29 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Zapatillas Hat Trick</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="icon" href="./assets/Logo.png" type="image/x-icon" />
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="#">
+            <a href="./assets/Logo.png">
                 <img src="./assets/logo.png" alt="Hat Trick Logo">
             </a>
         </div>
         <nav>
-            <a href="#">Productos</a>
-            <a href="#">Acerca de Nosotros</a>
-            <a href="#">Contacto</a>
+            <a href="#products-z">Modelos</a>
+            <a href="#" onclick="toggleChat()">Agendar una llamada</a>
         </nav>
     </header>
     <section class="hero">
         <div class="hero-content">
-            <h1>Encuentra las zapatillas perfectas</h1>
-            <p>Descubre nuestra colección de zapatillas de alta calidad.</p>
             <img src="./assets/Banner.png" alt="Banner de Zapatillas Hat Trick">
-            <a href="#" class="cta-button">Comprar Ahora</a>
         </div>
     </section>
 
-    <section class="products">
+    <section class="products" id="products-z">
         <h2>Nuestros Productos</h2>
         <div class="product-grid">
-            <!-- Product items will go here -->
             <div class="product-item">
                 <img src="./assets/Zamba1.png" alt="Zapatilla 1">
                 <h3>ZAMBA</h3>

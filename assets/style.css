@@ -20,20 +20,33 @@ header {
     align-items: center;
 }
 
-.logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo img {
+    max-width: 100px;
+    height: auto;
 }
 
 nav a {
     margin-left: 1rem;
 }
 
-/* Hero Section */
 .hero {
-    padding: 4rem 2rem;
+    padding: 0;
     text-align: center;
-    color: rgb(10, 10, 10); /* Ensure text is readable on the gradient */
+    color: rgb(10, 10, 10);
+    overflow: hidden;
+}
+
+.hero-content {
+    margin: 0 auto;
+    padding: 0; /* Remove padding */
+    max-width: none; /* Remove max-width */
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    max-height: 650px; /* Adjust as needed */
+    display: block;
 }
 
 .hero-content h1 {
@@ -44,13 +57,6 @@ nav a {
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-}
-
-.hero-content img {
-    max-width: 100%; /* Make the image responsive */
-    height: auto;
-    display: block; /* Remove extra space below the image */
-    margin-bottom: 10px; /* Add some space between the image and the text */
 }
 
 .cta-button {
@@ -132,7 +138,7 @@ footer {
     position: fixed;
     bottom: 0;
     right: 20px;
-    width: 300px;
+    width: 500px;
     min-height: 400px;
     max-height: 500px;
     background-color: #fff;
