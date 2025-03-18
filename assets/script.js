@@ -115,6 +115,7 @@ function toggleChat() {
 }
 
 /* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
+/* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
 function clearChat() {
     const chatBody = document.getElementById("chatBody");
     // Get all messages except the first one (greeting)
@@ -158,17 +159,13 @@ async function sendMessage() {
 
         const data = JSON.parse(text);
 
+                /* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
         if (Array.isArray(data) && data.length > 0 && data[0].output) {
             // Format the agent's response
             const agentResponse = `
                 <div class="message bot">
                     <strong>💬 Hat Trick:</strong><br><br>
-                    🔥 ¡Hola! Estoy aquí para ayudarte con tu compra. 🏆👟<br><br>
-                    📋 Para coordinar tu pedido y agendar una llamada de confirmación, por favor indícame los siguientes datos:<br><br>
-                    1️⃣ Tu nombre ✍️:<br>
-                    2️⃣ Tu número de teléfono 📞:<br>
-                    3️⃣ Fecha y hora para la llamada 📅⏰:<br>
-                    📲 ¡Envíame esta información y programaremos tu llamada de inmediato! 🚀
+                    ${data[0].output}
                 </div>
             `;
             chatBody.innerHTML += agentResponse;
