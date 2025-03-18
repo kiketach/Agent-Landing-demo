@@ -50,13 +50,13 @@ async function sendMessage() {
                     <strong>💬 Hat Trick:</strong><br><br>
                     🔥 ¡Hola! Estoy aquí para ayudarte con tu compra. 🏆👟<br><br>
                     📋 Para coordinar tu pedido y agendar una llamada de confirmación, por favor indícame los siguientes datos:<br><br>
-                    1️⃣ Tu nombre: ✍️ (Ejemplo: Juan Pérez)<br>
-                    2️⃣ Tu número de teléfono: 📞 (Ejemplo: 3125141329)<br>
-                    3️⃣ Modelo de zapatillas: 👟 (Ejemplo: Nova, Ultra, Zamba)<br>
-                    4️⃣ Talla: 🔢 (Ejemplo: 42)<br>
-                    5️⃣ Color: 🎨 (Ejemplo: Negro, Azul, Rojo)<br>
-                    6️⃣ Superficie de juego: 🏟 (Ejemplo: Cemento, Baldosa, Césped sintético)<br>
-                    7️⃣ Fecha y hora para la llamada: 📅⏰ (Si no tienes preferencia, puedo sugerirte horarios disponibles).<br><br>
+                    1️⃣ Tu nombre ✍️:<br>
+                    2️⃣ Tu número de teléfono 📞:<br>
+                    3️⃣ Modelo de zapatillas 👟:<br>
+                    4️⃣ Talla 🔢:<br>
+                    5️⃣ Color 🎨:<br>
+                    6️⃣ Fecha y hora para la llamada 📅⏰:<br>
+                    7️⃣  (Si no tienes preferencia, puedo sugerirte horarios disponibles).<br><br>
                     📲 ¡Envíame esta información y programaremos tu llamada de inmediato! 🚀
                 </div>
             `;
