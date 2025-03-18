@@ -161,15 +161,14 @@ async function sendMessage() {
                     📋 Para coordinar tu pedido y agendar una llamada de confirmación, por favor indícame los siguientes datos:<br><br>
                     1️⃣ Tu nombre ✍️:<br>
                     2️⃣ Tu número de teléfono 📞:<br>
-                    3️⃣ Modelo de zapatillas 👟:<br>
-                    4️⃣ Talla 🔢:<br>
-                    5️⃣ Color 🎨:<br>
-                    6️⃣ Fecha y hora para la llamada 📅⏰:<br>
-                    7️⃣  (Si no tienes preferencia, puedo sugerirte horarios disponibles).<br><br>
+                    3️⃣ Fecha y hora para la llamada 📅⏰:<br>
                     📲 ¡Envíame esta información y programaremos tu llamada de inmediato! 🚀
                 </div>
             `;
             chatBody.innerHTML += agentResponse;
+            setTimeout(() => {
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 100);
         } else {
             chatBody.innerHTML += `<div class="message bot"><strong>Hat Trick:</strong> Respuesta inválida</div>`;
         }
