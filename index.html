@@ -51,51 +51,72 @@
             <button class="scroll-button scroll-left"><i class="ri-arrow-left-s-line"></i></button>
             <div class="product-grid">
                 <div class="product-item">
+                <a href="#" onclick="openModal('zamba')">    
                     <img src="./assets/Zamba1.png" alt="Zapatilla 1">
                     <h3>ZAMBA</h3>
                     <p>100% cuero.</p>
                     <span>$99.000</span>
                     <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </a>
                 </div>
                 <div class="product-item">
+                <a href="#" onclick="openModal('master')">
                     <img src="./assets/Master2.png" alt="Zapatilla 2">
                     <h3>MASTER</h3>
                     <p>100% cuero.</p>
                     <span>$99.000</span>
                     <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </a>
                 </div>
                 <div class="product-item">
+                <a href="#" onclick="openModal('ultra')">
                     <img src="./assets/Ultra1.png" alt="Zapatilla 2">
                     <h3>MASTER</h3>
                     <p>100% cuero.</p>
                     <span>$99.000</span>
                     <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </a>
                 </div>
                 <div class="product-item">
+                <a href="#" onclick="openModal('dynamic')">
                     <img src="./assets/Dynamic1.png" alt="Zapatilla 2">
                     <h3>Dynamic</h3>
                     <p>Sintetico Alta Calidad.</p>
                     <span>89.000</span>
                     <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </a>
                 </div>
                 <div class="product-item">
+                <a href="#" onclick="openModal('copa')">
                     <img src="./assets/Copa5.png" alt="Zapatilla 2">
                     <h3>COPA</h3>
                     <p>Sintetico Alta Calidad</p>
                     <span>$89.000</span>
                     <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </a>
                 </div>
                 <div class="product-item">
+                <a href="#" onclick="openModal('sala')">
                     <img src="./assets/Sala11.png" alt="Zapatilla 2">
                     <h3>SALA</h3>
                     <p>Sintetico Alta Calidad</p>
                     <span>$89.000</span>
                     <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </a>
                 </div>
             </div>
             <button class="scroll-button scroll-right"><i class="ri-arrow-right-s-line"></i></button>
         </div>
     </section>
+<!-- The Modal -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalContent">
+            <!-- Product details will be loaded here -->
+        </div>
+    </div>
+</div>   
     <button class="chat-button" onclick="toggleChat()"><i class="ri-customer-service-2-line"></i></button>
         <div class="chat-container" id="chatContainer">
             <div class="chat-header">

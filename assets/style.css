@@ -202,23 +202,36 @@ nav a {
     font-size: 2rem; /* Adjust this value as needed */
 }
 
+/* Chat Container */
 .chat-container {
     position: fixed;
-    bottom: 0;
+    bottom: 70px;
     right: 20px;
-    width: 500px;
-    min-height: 400px;
-    max-height: 500px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    width: 300px;
+    background-color: white;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: none;
     flex-direction: column;
+    max-height: 500px;
     z-index: 1000;
 }
 
 .chat-container.open {
     display: flex;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 400px; /* Set a maximum width */
+        bottom: 0; /* Stick to the bottom */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+        border-radius: 0; /* Remove border radius */
+        max-height: 80vh; /* Adjust height for smaller screens */
+    }
 }
 
 .chat-header {
@@ -345,6 +358,48 @@ ol {
 ol li {
     margin-bottom: 5px;
 }
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 50%;
+    position: relative;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Footer */
 footer {
     background-color: #333;

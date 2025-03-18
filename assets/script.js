@@ -16,6 +16,99 @@ scrollLeftButton.addEventListener('click', () => {
 scrollRightButton.addEventListener('click', () => {
     productGrid.scrollLeft += 250; // Adjust scroll amount
 });
+/* Products Modal */
+function openModal(productId) {
+    event.preventDefault(); 
+    const modal = document.getElementById('productModal');
+    const modalContent = document.getElementById('modalContent');
+
+    let productDetails = getProductDetails(productId);
+
+    modalContent.innerHTML = `
+        <h2>${productDetails.name}</h2>
+        <img src="${productDetails.image}" alt="${productDetails.name}">
+        <p>${productDetails.description}</p>
+        <span>${productDetails.price}</span>
+        <a href="#" class="add-to-cart">Añadir al carrito</a>
+    `;
+
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    const modal = document.getElementById('productModal');
+    modal.style.display = 'none';
+}
+
+function getProductDetails(productId) {
+    // Replace this with your actual data loading logic (e.g., from an array or API)
+    if (productId === 'zamba') {
+        return {
+            id: 'zamba',
+            name: 'ZAMBA',
+            image: './assets/Zamba1.png',
+            description: 'Zapatilla de cuero 100%.',
+            price: '$99.000'
+        };
+    } else if (productId === 'master') {
+        return {
+            id: 'master',
+            name: 'MASTER',
+            image: './assets/Master2.png',
+            description: 'Zapatilla de cuero 100%.',
+            price: '$99.000'
+        };
+    } else if (productId === 'ultra') {
+        return {
+            id: 'ultra',
+            name: 'ULTRA',
+            image: './assets/Ultra1.png',
+            description: 'Zapatilla de cuero 100%.',
+            price: '$99.000'
+        };
+    } else if (productId === 'copa') {
+        return {
+            id: 'copa',
+            name: 'COPA',
+            image: './assets/Copa5.png',
+            description: 'Sintetico Alta Calidad.',
+            price: '$89.000'
+        };
+    } else if (productId === 'dynamic') {
+        return {
+            id: 'dynamic',
+            name: 'DYNAMIC',
+            image: './assets/Dynamic1.png',
+            description: 'Sintetico Alta Calidad',
+            price: '$89.000'
+        };
+    } else if (productId === 'sala') {
+        return {
+            id: 'sala',
+            name: 'SALA',
+            image: './assets/Sala11.png',
+            description: 'Sintetico Alta Calidad.',
+            price: '$89.000'
+        };
+    } else {
+        return {
+            id: 'unknown',
+            name: 'Unknown Product',
+            image: './assets/placeholder.png',
+            description: 'Product details not found.',
+            price: 'N/A'
+        };
+    }
+}
+
+// Close the modal if the user clicks outside of it
+window.onclick = function (event) {
+    const modal = document.getElementById('productModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 /* Ventana del CHAT */
 function toggleChat() {
     document.getElementById("chatContainer").classList.toggle("open");
