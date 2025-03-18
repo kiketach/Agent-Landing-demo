@@ -29,6 +29,12 @@ nav a {
     margin-left: 1rem;
 }
 
+nav a i {
+    margin-left: 0.5rem; 
+    font-size: 2rem;
+    vertical-align: middle;
+}
+
 /* =============FRANJAS NEGRAS===================== */
 .header {
     background-color: #000000;
@@ -124,7 +130,7 @@ nav a {
 }
 
 .product-grid::-webkit-scrollbar {
-    height: 8px; /* Adjust scrollbar height */
+    display: none;
 }
 
 .product-grid::-webkit-scrollbar-thumb {
@@ -207,7 +213,7 @@ nav a {
     position: fixed;
     bottom: 70px;
     right: 20px;
-    width: 300px;
+    width: 400px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -224,13 +230,13 @@ nav a {
 /* Media query for mobile devices */
 @media (max-width: 600px) {
     .chat-container {
-        width: 90%; /* Adjust width for smaller screens */
-        max-width: 400px; /* Set a maximum width */
-        bottom: 0; /* Stick to the bottom */
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Center horizontally */
-        border-radius: 0; /* Remove border radius */
-        max-height: 80vh; /* Adjust height for smaller screens */
+        width: 90%;
+        max-width: 400px;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0;
+        max-height: 95vh;
     }
 }
 
@@ -277,11 +283,11 @@ nav a {
 }
 
 .chat-body p {
-    font-size: 0.9rem;
-    color: #999; /* Light gray color */
-    text-align: center; /* Center the text */
-    font-style: italic; /* Italic font style */
-    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #999;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
 }
 
 .chat-input {
@@ -374,11 +380,20 @@ ol li {
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: auto;
+    margin: 15% auto;
     padding: 10px;
     border: 1px solid #888;
-    width: 50%;
+    width: 60%;
     position: relative;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%; /* Increase width on mobile */
+        margin: 5% auto; /* Reduce top margin on mobile */
+        max-height: 90vh; /* Limit the height */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
 }
 
 /* The Close Button */
