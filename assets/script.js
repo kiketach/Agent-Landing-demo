@@ -19,7 +19,7 @@ async function sendMessage() {
     if (!message) return;
 
     const chatBody = document.getElementById("chatBody");
-    chatBody.innerHTML += `<div><strong>Tú:</strong> ${message}</div>`;
+    chatBody.innerHTML += `<div class="message user"><strong>Tú:</strong> ${message}</div>`;
     input.value = "";
 
     const sessionId = "defaultSession";
@@ -43,17 +43,35 @@ async function sendMessage() {
         const data = JSON.parse(text);
 
         if (Array.isArray(data) && data.length > 0 && data[0].output) {
-            chatBody.innerHTML += `<div><strong>Hat Trick:</strong> ${data[0].output}</div>`;
+            // 🎨 Mejor presentación del mensaje
+            const formattedMessage = `
+                <div class="message bot">
+                    <strong>Hat Trick 🏆:</strong>
+                    <p>¡Genial! Para procesar tu pedido, por favor confirma:</p>
+                    <ul>
+                        <li>✍️ <b>Nombre:</b> ${data[0].nombre_cliente || "No proporcionado"}</li>
+                        <li>📞 <b>Teléfono:</b> ${data[0].telefono || "No proporcionado"}</li>
+                        <li>👟 <b>Modelo:</b> ${data[0].modelo || "No especificado"}</li>
+                        <li>🔢 <b>Talla:</b> ${data[0].talla || "No especificada"}</li>
+                        <li>🎨 <b>Color:</b> ${data[0].color || "No especificado"}</li>
+                        <li>⚽ <b>Superficie de juego:</b> ${data[0].playing_surface || "No especificada"}</li>
+                        <li>📅 <b>Fecha de llamada:</b> ${data[0].fecha_cita || "A definir"}</li>
+                    </ul>
+                </div>
+            `;
+
+            chatBody.innerHTML += formattedMessage;
         } else {
-            chatBody.innerHTML += `<div><strong>Hat Trick:</strong> Respuesta inválida</div>`;
+            chatBody.innerHTML += `<div class="message bot"><strong>Hat Trick:</strong> Respuesta inválida</div>`;
         }
     } catch (error) {
         console.error("Error al conectar con el agente:", error);
-        chatBody.innerHTML += `<div><strong>Hat Trick:</strong> No se pudo conectar</div>`;
+        chatBody.innerHTML += `<div class="message bot"><strong>Hat Trick:</strong> No se pudo conectar</div>`;
     }
 
     chatBody.scrollTop = chatBody.scrollHeight;
 }
+
 
 // Basic Cart Functionality (new - ADDED TO EXISTING SCRIPT)
 function addToCart(productName, price) {

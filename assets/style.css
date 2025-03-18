@@ -127,21 +127,21 @@ footer {
     bottom: 0;
     right: 20px;
     width: 300px;
-    /* Ensure the container has a minimum height */
-    min-height: 400px; /* Adjust this value as needed */
+    min-height: 400px;  /* Mantiene una altura mínima */
+    max-height: 500px;  /* Evita que el chat crezca demasiado */
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    display: none; /* Hidden by default */
+    display: none; /* Oculto por defecto */
     flex-direction: column;
     z-index: 1000;
 }
 
 .chat-container.open {
-    display: flex; /* Or block, or grid, depending on your layout */
+    display: flex;
 }
 
-
+/* Chat Header */
 .chat-header {
     background-color: #007bff;
     color: white;
@@ -153,13 +153,36 @@ footer {
     border-top-right-radius: 5px;
 }
 
-/* Chat Body */
+/* Chat Body con scroll */
 .chat-body {
     padding: 10px;
     flex-grow: 1;
-    overflow-y: auto; /* Add scrollbar if content overflows */
+    overflow-y: auto;  /* Habilita el scroll */
+    max-height: 350px; /* Mantiene el tamaño manejable */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
 }
 
+/* Personalización del scroll en navegadores WebKit */
+.chat-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.chat-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Chat Input */
 .chat-input {
     padding: 10px;
     border-top: 1px solid #ccc;
@@ -191,4 +214,34 @@ footer {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
+}
+
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.bot {
+    background-color: #EDEDED;
+    align-self: flex-start;
+}
+
+ul {
+    padding-left: 15px;
+    margin: 5px 0;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 5px 0;
 }
