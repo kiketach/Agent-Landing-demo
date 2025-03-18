@@ -128,7 +128,6 @@ function handleKeyPress(event) {
         sendMessage();
     }
 }
-
 async function sendMessage() {
     const input = document.getElementById("chatMessage");
     const message = input.value.trim();
@@ -136,9 +135,8 @@ async function sendMessage() {
 
     const chatBody = document.getElementById("chatBody");
     chatBody.innerHTML += `<div class="message user"><strong>Tú:</strong> ${message}</div>`;
+    chatBody.scrollTop = chatBody.scrollHeight; // Mueve la línea aquí
     input.value = "";
-
-    chatBody.scrollTop = chatBody.scrollHeight; // Add this line
 
     const sessionId = "defaultSession";
 
@@ -169,12 +167,14 @@ async function sendMessage() {
                 </div>
             `;
             chatBody.innerHTML += agentResponse;
+            chatBody.scrollTop = chatBody.scrollHeight; // Mueve la línea aquí
         } else {
             chatBody.innerHTML += `<div class="message bot"><strong>Hat Trick:</strong> Respuesta inválida</div>`;
+            chatBody.scrollTop = chatBody.scrollHeight; // Asegúrate de que también se desplace si hay un error
         }
     } catch (error) {
         console.error("Error al conectar con el agente:", error);
         chatBody.innerHTML += `<div class="message bot"><strong>Hat Trick:</strong> No se pudo conectar</div>`;
+        chatBody.scrollTop = chatBody.scrollHeight; // Asegúrate de que también se desplace si hay un error
     }
-    chatBody.scrollTop = chatBody.scrollHeight;
 }
