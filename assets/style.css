@@ -24,9 +24,24 @@ header {
     max-width: 100px;
     height: auto;
 }
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+}
 
 nav a {
     margin-left: 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; 
+    display: inline-flex; 
+    align-items: center; 
+}
+
+nav a:hover {
+    color: #007bff;
+    transform: scale(1.1); /* Scale the link on hover */
 }
 
 nav a i {
@@ -55,11 +70,16 @@ nav a i {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 16px; 
+    font-size: 16px;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.icon-container i:hover {
+    transform: scale(1.2); /* Scale the icon and text on hover */
 }
 .icon-container .fas::before {
     font-family: "Font Awesome 5 Free";
@@ -425,6 +445,12 @@ footer {
 }
 footer .flex.space-x-4.mr-10 {
     margin-right: 80px;
+}
+
+@media (max-width: 600px) {
+    footer a {
+        font-size: 0.8rem;
+    }
 }
 
 /* =============PANTALLAS-MAXIMO 600px===================== */
