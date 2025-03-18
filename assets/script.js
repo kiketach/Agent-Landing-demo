@@ -13,6 +13,7 @@ function handleKeyPress(event) {
     }
 }
 
+/* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
 async function sendMessage() {
     const input = document.getElementById("chatMessage");
     const message = input.value.trim();
@@ -43,24 +44,23 @@ async function sendMessage() {
         const data = JSON.parse(text);
 
         if (Array.isArray(data) && data.length > 0 && data[0].output) {
-            // 🎨 Mejor presentación del mensaje
-            const formattedMessage = `
+            // Format the agent's response
+            const agentResponse = `
                 <div class="message bot">
-                    <strong>Hat Trick 🏆:</strong>
-                    <p>¡Genial! Para procesar tu pedido, por favor confirma:</p>
-                    <ul>
-                        <li>✍️ <b>Nombre:</b> ${data[0].nombre_cliente || "No proporcionado"}</li>
-                        <li>📞 <b>Teléfono:</b> ${data[0].telefono || "No proporcionado"}</li>
-                        <li>👟 <b>Modelo:</b> ${data[0].modelo || "No especificado"}</li>
-                        <li>🔢 <b>Talla:</b> ${data[0].talla || "No especificada"}</li>
-                        <li>🎨 <b>Color:</b> ${data[0].color || "No especificado"}</li>
-                        <li>⚽ <b>Superficie de juego:</b> ${data[0].playing_surface || "No especificada"}</li>
-                        <li>📅 <b>Fecha de llamada:</b> ${data[0].fecha_cita || "A definir"}</li>
-                    </ul>
+                    <strong>💬 Hat Trick:</strong><br><br>
+                    🔥 ¡Hola! Estoy aquí para ayudarte con tu compra. 🏆👟<br><br>
+                    📋 Para coordinar tu pedido y agendar una llamada de confirmación, por favor indícame los siguientes datos:<br><br>
+                    1️⃣ Tu nombre: ✍️ (Ejemplo: Juan Pérez)<br>
+                    2️⃣ Tu número de teléfono: 📞 (Ejemplo: 3125141329)<br>
+                    3️⃣ Modelo de zapatillas: 👟 (Ejemplo: Nova, Ultra, Zamba)<br>
+                    4️⃣ Talla: 🔢 (Ejemplo: 42)<br>
+                    5️⃣ Color: 🎨 (Ejemplo: Negro, Azul, Rojo)<br>
+                    6️⃣ Superficie de juego: 🏟 (Ejemplo: Cemento, Baldosa, Césped sintético)<br>
+                    7️⃣ Fecha y hora para la llamada: 📅⏰ (Si no tienes preferencia, puedo sugerirte horarios disponibles).<br><br>
+                    📲 ¡Envíame esta información y programaremos tu llamada de inmediato! 🚀
                 </div>
             `;
-
-            chatBody.innerHTML += formattedMessage;
+            chatBody.innerHTML += agentResponse;
         } else {
             chatBody.innerHTML += `<div class="message bot"><strong>Hat Trick:</strong> Respuesta inválida</div>`;
         }

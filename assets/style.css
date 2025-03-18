@@ -31,9 +31,9 @@ nav a {
 
 /* Hero Section */
 .hero {
-    background-color: #e0e0e0;
     padding: 4rem 2rem;
     text-align: center;
+    color: rgb(10, 10, 10); /* Ensure text is readable on the gradient */
 }
 
 .hero-content h1 {
@@ -79,6 +79,12 @@ nav a {
     border: 1px solid #ccc;
     padding: 1rem;
     border-radius: 5px;
+    transition: transform 0.2s ease-in-out; /* Add a transition for a smooth effect */
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Slightly scale up the item on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .product-item img {
@@ -127,12 +133,12 @@ footer {
     bottom: 0;
     right: 20px;
     width: 300px;
-    min-height: 400px;  /* Mantiene una altura mínima */
-    max-height: 500px;  /* Evita que el chat crezca demasiado */
+    min-height: 400px;
+    max-height: 500px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    display: none; /* Oculto por defecto */
+    display: none;
     flex-direction: column;
     z-index: 1000;
 }
@@ -153,33 +159,44 @@ footer {
     border-top-right-radius: 5px;
 }
 
+.chat-header button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 1.2rem;
+}
+
+.chat-header div {
+    display: flex;
+    align-items: center;
+}
+
+.chat-header .clear-chat {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-right: 10px; /* Add some space between the buttons */
+}
+
 /* Chat Body con scroll */
 .chat-body {
     padding: 10px;
     flex-grow: 1;
-    overflow-y: auto;  /* Habilita el scroll */
-    max-height: 350px; /* Mantiene el tamaño manejable */
+    overflow-y: auto;
+    max-height: 400px;
     scrollbar-width: thin;
     scrollbar-color: #ccc transparent;
 }
 
-/* Personalización del scroll en navegadores WebKit */
-.chat-body::-webkit-scrollbar {
-    width: 6px;
-}
-
-.chat-body::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.chat-body::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.chat-body::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.chat-body p {
+    font-size: 0.9rem;
+    color: #999; /* Light gray color */
+    text-align: center; /* Center the text */
+    font-style: italic; /* Italic font style */
+    margin-bottom: 10px;
 }
 
 /* Chat Input */
@@ -229,11 +246,13 @@ footer {
     background-color: #DCF8C6;
     align-self: flex-end;
     text-align: right;
+    border-radius: 15px 5px 15px 15px;
 }
 
 .bot {
     background-color: #EDEDED;
     align-self: flex-start;
+    border-radius: 5px 15px 15px 15px;
 }
 
 ul {
@@ -244,4 +263,12 @@ ul {
 ul li {
     list-style-type: none;
     padding: 5px 0;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 5px;
 }

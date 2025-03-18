@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Zapatillas Hat Trick</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="#">Hat Trick</a>
+            <a href="#">
+                <img src="./assets/logo.png" alt="Hat Trick Logo">
+            </a>
         </div>
         <nav>
             <a href="#">Productos</a>
@@ -17,7 +20,6 @@
             <a href="#">Contacto</a>
         </nav>
     </header>
-
     <section class="hero">
         <div class="hero-content">
             <h1>Encuentra las zapatillas perfectas</h1>
@@ -50,19 +52,22 @@
 
     <button class="chat-button" onclick="toggleChat()">💬</button>
 
-    <div class="chat-container" id="chatContainer">
-        <div class="chat-header">
-            <span>Hat Trick (Agendamiento)</span>
-            <button onclick="toggleChat()">❌</button>
+                <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <span>Agenda tu llamada</span>
+                <div>
+                    <button class="clear-chat" onclick="clearChat()"><i class="ri-brush-line"></i></button>
+                    <button onclick="toggleChat()"><i class="ri-close-line"></i></button>
+                </div>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <p>Aquí podrás agendar una llamada para tener una experiencia de compra 100% personalizada.</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatMessage" placeholder="Escribe un mensaje..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
         </div>
-        <div class="chat-body" id="chatBody"></div>
-        <button class="clear-chat" onclick="clearChat()">🗑 Limpiar Chat</button>
-        <div class="chat-input">
-            <input type="text" id="chatMessage" placeholder="Escribe un mensaje..." onkeypress="handleKeyPress(event)">
-            <button onclick="sendMessage()">Enviar</button>
-        </div>
-    </div>
-
     <footer>
         <p>&copy; 2025 Zapatillas Hat Trick. Todos los derechos reservados.</p>
     </footer>
