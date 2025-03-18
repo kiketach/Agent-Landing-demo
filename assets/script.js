@@ -114,30 +114,13 @@ function toggleChat() {
     document.getElementById("chatContainer").classList.toggle("open");
 }
 
-async function clearChat() {
+function clearChat() {
     const chatBody = document.getElementById("chatBody");
     // Get all messages except the first one (greeting)
     const messagesToClear = Array.from(chatBody.children).slice(1);
 
     // Remove the messages
     messagesToClear.forEach(message => message.remove());
-
-    // Clear n8n memory
-    try {
-        const response = await fetch("https://eabril.app.n8n.cloud/webhook/clearMemory", { // Replace with your actual webhook URL
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ sessionId: "defaultSession" })
-        });
-
-        if (!response.ok) {
-            throw new Error(`Error clearing memory: ${response.status} ${response.statusText}`);
-        }
-
-        console.log("Memory cleared successfully");
-    } catch (error) {
-        console.error("Error clearing memory:", error);
-    }
 }
 
 function handleKeyPress(event) {
