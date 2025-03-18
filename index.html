@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Zapatillas Hat Trick</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Permanent+Marker&family=Shadows+Into+Light&family=Caveat:wght@400..700&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" href="./assets/Logo.png" type="image/x-icon" />
 </head>
 <body>
@@ -16,36 +21,81 @@
             </a>
         </div>
         <nav>
-            <a href="#products-z">Modelos</a>
+            <a href="#products-z" onclick="scrollToProducts(event)">Modelos</a>
             <a href="#" onclick="toggleChat()">Agendar una llamada</a>
         </nav>
     </header>
+    <div class="header">
+        <div class="icon-container">
+        <i class="fas fa-truck"> Envio a Nivel Nacional </i>
+        <i class="fas fa-dollar-sign"> Pagas al recibir tu pedido </i>
+        <i class="fas fa-gift"> Personalizado GRATIS! </i>
+        <i class="fas fa-headset"> Atencion personalizada </i>
+         </div>
+</div>
     <section class="hero">
         <div class="hero-content">
             <img src="./assets/Banner.png" alt="Banner de Zapatillas Hat Trick">
         </div>
     </section>
-
-    <section class="products" id="products-z">
-        <h2>Nuestros Productos</h2>
-        <div class="product-grid">
-            <div class="product-item">
-                <img src="./assets/Zamba1.png" alt="Zapatilla 1">
-                <h3>ZAMBA</h3>
-                <p>Descripción breve.</p>
-                <span>$99.99</span>
-                <a href="#" class="add-to-cart">Añadir al carrito</a>
+    <div class="bg-gray-50 py-24 sm:py-4">
+        <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-4">
+          <h2 class="text-center text-base/7 font-semibold text-indigo-600">Máxima adaptación a tus necesidades</h2>
+          <p class="mx-auto mt-2 max-w-lg text-pretty text-center text-4xl font-medium tracking-tight text-gray-950 sm:text-5xl">Ponle la suela que desees a tus zapatillas Hat Trick</p>
+          <div class="mt-10 grid gap-2 sm:mt-16 grid-cols-2 lg:grid-cols-2">
+        </div>
+        </div>
+    </div>
+        <section class="products" id="products-z">
+        <div class="product-carousel">
+            <button class="scroll-button scroll-left"><i class="ri-arrow-left-s-line"></i></button>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="./assets/Zamba1.png" alt="Zapatilla 1">
+                    <h3>ZAMBA</h3>
+                    <p>100% cuero.</p>
+                    <span>$99.000</span>
+                    <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </div>
+                <div class="product-item">
+                    <img src="./assets/Master2.png" alt="Zapatilla 2">
+                    <h3>MASTER</h3>
+                    <p>100% cuero.</p>
+                    <span>$99.000</span>
+                    <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </div>
+                <div class="product-item">
+                    <img src="./assets/Ultra1.png" alt="Zapatilla 2">
+                    <h3>MASTER</h3>
+                    <p>100% cuero.</p>
+                    <span>$99.000</span>
+                    <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </div>
+                <div class="product-item">
+                    <img src="./assets/Dynamic1.png" alt="Zapatilla 2">
+                    <h3>Dynamic</h3>
+                    <p>Sintetico Alta Calidad.</p>
+                    <span>89.000</span>
+                    <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </div>
+                <div class="product-item">
+                    <img src="./assets/Copa5.png" alt="Zapatilla 2">
+                    <h3>COPA</h3>
+                    <p>Sintetico Alta Calidad</p>
+                    <span>$89.000</span>
+                    <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </div>
+                <div class="product-item">
+                    <img src="./assets/Sala11.png" alt="Zapatilla 2">
+                    <h3>SALA</h3>
+                    <p>Sintetico Alta Calidad</p>
+                    <span>$89.000</span>
+                    <a href="#" class="add-to-cart">Añadir al carrito</a>
+                </div>
             </div>
-             <div class="product-item">
-                <img src="./assets/Master2.png" alt="Zapatilla 2">
-                <h3>MASTER</h3>
-                <p>Descripción breve.</p>
-                <span>$129.99</span>
-                <a href="#" class="add-to-cart">Añadir al carrito</a>
-            </div>
+            <button class="scroll-button scroll-right"><i class="ri-arrow-right-s-line"></i></button>
         </div>
     </section>
-
     <button class="chat-button" onclick="toggleChat()"><i class="ri-customer-service-2-line"></i></button>
         <div class="chat-container" id="chatContainer">
             <div class="chat-header">
@@ -63,10 +113,29 @@
                 <button onclick="sendMessage()">Enviar</button>
             </div>
         </div>
-    <footer>
-        <p>&copy; 2025 Zapatillas Hat Trick. Todos los derechos reservados.</p>
-    </footer>
-
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="container mx-auto flex justify-between items-center">
+          <!-- Información -->
+              <div>
+                <a href="#inicio" class="text-lg font-semibold text-white hover:text-blue-500 sm:text-xs">Zapatillas Hat Trick 2025&reg;</a>
+              </div>    
+          <!-- Redes Sociales y Dirección -->
+              <div class="flex space-x-4 mr-10">
+                <!-- Enlace a Facebook -->
+                <a href="https://www.facebook.com/p/Zapatillas-Hat-Trick-100064189026215/" target="_blank" class="text-white hover:text-blue-500">
+                  <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+          <!-- Enlace a Instagram -->
+                <a href="https://www.instagram.com/zapatillashattrick?igsh=YzljYTk1ODg3Zg==" target="_blank" class="text-white hover:text-pink-500">
+                  <i class="fab fa-instagram fa-lg"></i>
+                </a>
+          <!-- Enlace a Google Maps -->
+                <a href="https://www.google.com/maps/place/Diag.+31+a+%2324-02,+Bogotá" target="_blank" class="text-white hover:text-red-500">
+                  <i class="fas fa-map-marker-alt fa-lg"></i>
+                </a>
+              </div>
+            </div>
+          </footer>
     <script src="./assets/script.js"></script>
 </body>
 </html>

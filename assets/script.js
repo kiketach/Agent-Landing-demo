@@ -1,4 +1,22 @@
-/* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
+/* Modelos buttom */
+function scrollToProducts(event) {
+    event.preventDefault(); // Prevent default link behavior
+    const productsSection = document.getElementById('products-z');
+    productsSection.scrollIntoView({ behavior: 'smooth' });
+}
+/* Products */
+const productGrid = document.querySelector('.product-grid');
+const scrollLeftButton = document.querySelector('.scroll-button.scroll-left');
+const scrollRightButton = document.querySelector('.scroll-button.scroll-right');
+
+scrollLeftButton.addEventListener('click', () => {
+    productGrid.scrollLeft -= 250; // Adjust scroll amount
+});
+
+scrollRightButton.addEventListener('click', () => {
+    productGrid.scrollLeft += 250; // Adjust scroll amount
+});
+/* Ventana del CHAT */
 function toggleChat() {
     document.getElementById("chatContainer").classList.toggle("open");
 }
@@ -12,8 +30,6 @@ function handleKeyPress(event) {
         sendMessage();
     }
 }
-
-/* filepath: c:\Users\Audisoft\Documents\Proyectos\Agent-Landing\assets\script.js */
 async function sendMessage() {
     const input = document.getElementById("chatMessage");
     const message = input.value.trim();
